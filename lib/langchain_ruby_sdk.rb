@@ -22,8 +22,8 @@ module LangchainRubySdk
       response = HTTParty.post("#{@base_url}/qa", headers: set_headers, body: body)  
     end
 
-    def ghostwrite(text, sales_rep, prospect, company, company_information)
-      body = {token: @token, text: text, sales_rep: sales_rep, prospect: prospect, company: company, company_information: company_information, text_type: set_text_type}.to_json
+    def ghostwrite(text, sales_rep, prospect, company, company_information, author_name)
+      body = {token: @token, text: text, sales_rep: sales_rep, prospect: prospect, company: company, company_information: company_information, author_name: author_name, text_type: set_text_type}.to_json
       response = HTTParty.post("#{@base_url}/ghostwrite/email", headers: set_headers, body: body)
     end
     
